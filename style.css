@@ -6,32 +6,32 @@
 
 
 .wrapper {
-   margin: 80px auto;
-   max-width: 1200px;
+   margin: 5rem auto;
+   max-width: 75rem;
 }
 
 .accordion {
    display: flex;
    flex-direction: column;
-   margin: 0 20px;
+   margin: 0 1.25rem;
 }
 
 h1 {
-   font-size: 32px;
-   margin: 0 20px 20px 30px;
+   font-size: 2rem;
+   margin: 0 1.25rem 1.25rem 1.875rem;
 }
 
 .accordion__item {
    width: 100%;
    background-color: #F5F5EB;
-   margin-bottom: 10px;
-   padding: 10px 10px 10px 10px;
+   margin-bottom: 0.625rem;
+   padding: 0.625rem 0.625rem 0.625rem 0.625rem;
 }
 
 
 /*добавим параметры background-image для title, чтобы при наведении отобразить иконку "+" (или x)*/
 .accordion__title {
-   margin-bottom: 10px;
+   margin-bottom: 0.625rem;
    background-repeat: no-repeat;
    background-position: 99% 50%;
    transition: 0.5s ease;
@@ -55,7 +55,7 @@ input[type="radio"]{
 Св-ва применяются к картинке, которая находится с input или после него на одном уровне*/
 .accordion__input:checked~.accordion__img {
    height: auto;
-   padding: 5px;
+   padding: 0.3125rem;
    opacity: 1;
    transition: all 1.5s ease-in;
  }
@@ -67,21 +67,18 @@ input[type="radio"]{
    height: 0;
    overflow: hidden;
    opacity: 0;
-   /* padding: 10px; */
    transition: all 0.5s ease-in;
 }
 
 .accordion__img img {
-   /* padding: 10px; */
    max-width: 100%;
-   /* height: auto; */
    text-align: center;
    transition: all 0.5s ease-in;
 }
 
 
 /*Добавим курсор и ховер на десктопной версии*/
-@media (min-width: 1440px) {
+@media (min-width: 90rem) {
    .accordion:hover {
       cursor: pointer;
    }
@@ -91,8 +88,8 @@ input[type="radio"]{
    }
 
    .accordion__item:hover > .accordion__img {
-      height: 600px;
-      padding: 10px;
+      height: 37.5rem;
+      padding: 0.625rem;
       opacity: 1;
       transition: all 0.5s ease;
    }
