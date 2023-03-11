@@ -5,36 +5,109 @@
 }
 
 
+.wrapper {
+   margin: 80px auto;
+   max-width: 1200px;
+}
 
 .accordion {
-   margin: 5rem auto;
-   max-width: 75rem;
-   cursor: pointer;
+   display: flex;
+   flex-direction: column;
+   margin: 0 20px;
+}
+
+h1 {
+   font-size: 32px;
+   margin: 0 20px 20px 30px;
 }
 
 .accordion__item {
    width: 100%;
    background-color: #F5F5EB;
-   margin-bottom: 0.9375rem;
+   margin-bottom: 10px;
+   padding: 10px 10px 10px 10px;
 }
 
-.accordion li {
+
+/*добавим параметры background-image для title, чтобы при наведении отобразить иконку "+" (или x)*/
+.accordion__title {
+   margin-bottom: 10px;
+   background-repeat: no-repeat;
+   background-position: 99% 50%;
+   transition: 0.5s ease;
+}
+
+input[type="radio"]{
+   display: none;
+}
+
+.accordion__input:checked + .accordion__title {
+   color: blue;
+   transition: 0.5s ease;
+}
+
+.accordion__input:checked + .accordion {
+   color: blue;
+}
+
+
+/* ~ - родственный селектор.
+Св-ва применяются к картинке, которая находится с input или после него на одном уровне*/
+.accordion__input:checked~.accordion__img {
+   height: 600px;
+   opacity: 1;
+   transition: all 1.5s ease-in;
+ }
+
+.accordion__img {
    display: flex;
    flex-direction: column;
    align-items: center;
-   list-style: none;
-   font-size: 1.625rem;
-   font-weight: 900;
-   padding: 1.25rem;
+   
+   height: 0;
+   overflow: hidden;
+   opacity: 0;
+   transition: all 0.5s ease-in;
 }
 
-.accordion__title {
-   display: flex;
-   justify-content: space-between;
-   margin-bottom: 1.25rem;
-   width: 100%;
+.accordion__img img {
+   max-width: 100%;
+   height: 600px;
+   text-align: center;
 }
 
-input[type='radio']{
-   display: none;
+
+/*Добавим курсор и ховер на десктопной версии*/
+@media (min-width: 1440px) {
+   .accordion:hover {
+      cursor: pointer;
+   }
+
+   .accordion__item:hover {
+      cursor: pointer;
+   }
+
+   .accordion__item:hover > .accordion__img {
+      height: 600px;
+      opacity: 1;
+      transition: all 0.5s ease;
+   }
+
+   .accordion:hover .accordion__item:hover .accordion__title {
+      background-image: url(assets/cross.svg);
+      transition: 0.5s ease;
+    }
+
+   .accordion:hover .accordion__title {
+      color: blue;
+      background-image: url(assets/plus.svg);
+      transition: 0.5s ease;
+   }
+
+   .accordion:hover .accordion__input:checked~.accordion__title {
+      background-image: url(assets/cross.svg);
+    }
 }
+
+
+
