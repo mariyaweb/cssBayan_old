@@ -57,13 +57,13 @@ input[type="radio"]{
    height: auto;
    padding: 0.3125rem;
    opacity: 1;
-   transition: all 1.5s ease-in;
+   transition: all 0.5s ease-in;
  }
 
 .accordion__img {
    display: flex;
    flex-direction: column;
-   align-items: center;   
+   align-items: center;
    height: 0;
    overflow: hidden;
    opacity: 0;
@@ -91,7 +91,7 @@ input[type="radio"]{
       height: 37.5rem;
       padding: 0.625rem;
       opacity: 1;
-      transition: all 0.5s ease;
+      transition: all 0.5s ease-in;
    }
 
    .accordion:hover .accordion__item:hover .accordion__title {
@@ -108,6 +108,7 @@ input[type="radio"]{
    .accordion:hover .accordion__input:checked~.accordion__title {
       background-image: url(assets/cross.svg);
     }
+
 }
 
 
